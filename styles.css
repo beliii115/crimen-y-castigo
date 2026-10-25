@@ -1,0 +1,348 @@
+:root {
+  --negro: #000000;
+  --carbon: #120708;
+  --panel: #1a0b0c;
+  --sangre: #8f1118;
+  --rojo: #c4202a;
+  --rojo-vivo: #e63946;
+  --hueso: #eadfd3;
+  --ceniza: #a99a92;
+  --linea: #3a1417;
+  --display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --texto: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--negro);
+  color: var(--hueso);
+  font-family: var(--texto);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .6em;
+}
+
+p { margin: 0 0 1em; max-width: 68ch; }
+
+a { color: var(--rojo-vivo); }
+
+:focus-visible {
+  outline: 3px solid var(--rojo-vivo);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--rojo);
+  color: #fff;
+  padding: .6rem 1rem;
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* Barra superior */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8rem clamp(1rem, 4vw, 3rem);
+  background: rgba(0, 0, 0, .92);
+  border-bottom: 1px solid var(--sangre);
+  backdrop-filter: blur(6px);
+}
+.topbar[hidden] { display: none; }
+.brand {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--hueso);
+  text-decoration: none;
+}
+.topbar-link {
+  color: var(--ceniza);
+  text-decoration: none;
+  padding: .3rem 0;
+  border-bottom: 1px solid transparent;
+}
+.topbar-link:hover { color: var(--hueso); border-bottom-color: var(--rojo); }
+
+main { outline: none; }
+
+/* Inicio */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem clamp(1.25rem, 8vw, 7rem);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(143, 17, 24, .45), transparent 55%),
+    var(--negro);
+}
+/* El tajo rojo: único momento memorable del diseño */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: 18%;
+  width: 14px;
+  height: 130%;
+  background: linear-gradient(to bottom, transparent, var(--rojo) 25%, var(--sangre) 80%, transparent);
+  transform: rotate(14deg);
+  box-shadow: 0 0 40px rgba(196, 32, 42, .55);
+  animation: tajo 1.1s cubic-bezier(.7, 0, .2, 1) both;
+}
+@keyframes tajo {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+.hero h1 {
+  position: relative;
+  font-size: clamp(3.4rem, 12vw, 9rem);
+  letter-spacing: -.02em;
+  margin-bottom: .15em;
+}
+.hero .autor {
+  position: relative;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: var(--ceniza);
+  margin-bottom: 2rem;
+}
+.hero .lema {
+  position: relative;
+  max-width: 44ch;
+  color: var(--hueso);
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  align-self: flex-start;
+  position: relative;
+  background: var(--rojo);
+  color: #fff;
+  border: 0;
+  padding: .85rem 2rem;
+  font: 600 1.05rem var(--texto);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn:hover { background: var(--rojo-vivo); }
+.btn.secundario {
+  background: transparent;
+  border: 1px solid var(--rojo);
+  color: var(--hueso);
+}
+.btn.secundario:hover { background: var(--sangre); }
+
+/* Menú */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 5rem;
+}
+.page > h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  border-bottom: 2px solid var(--rojo);
+  padding-bottom: .3em;
+  margin-bottom: .5em;
+}
+.intro {
+  color: var(--ceniza);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.menu-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--linea);
+  border: 1px solid var(--linea);
+}
+.menu-grid a {
+  display: block;
+  height: 100%;
+  padding: 1.6rem 1.5rem;
+  background: var(--carbon);
+  color: var(--hueso);
+  text-decoration: none;
+  transition: background .2s, box-shadow .2s;
+}
+.menu-grid a:hover {
+  background: var(--sangre);
+  box-shadow: inset 4px 0 0 var(--rojo-vivo);
+}
+.menu-grid h2 { font-size: 1.7rem; margin-bottom: .3em; }
+.menu-grid p { color: var(--ceniza); font-size: .98rem; margin: 0; }
+.menu-grid a:hover p { color: var(--hueso); }
+
+/* Tarjetas de contenido */
+.item {
+  background: var(--panel);
+  border-left: 4px solid var(--rojo);
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1.2rem;
+}
+.item h2 { font-size: 1.9rem; margin-bottom: .1em; }
+.item .rol {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--rojo-vivo);
+  margin-bottom: .8rem;
+}
+.item p:last-child { margin-bottom: 0; }
+
+.bloque { margin-bottom: 2.5rem; }
+.bloque h2 { font-size: 2rem; color: var(--hueso); }
+.bloque ul { padding-left: 1.2rem; max-width: 68ch; }
+.bloque li { margin-bottom: .5rem; }
+.bloque li::marker { color: var(--rojo); }
+
+/* Video */
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--sangre);
+  margin: 1rem 0 2.5rem;
+}
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Frases */
+.frase {
+  background: var(--panel);
+  border-left: 4px solid var(--rojo);
+  padding: 1.5rem 1.6rem;
+  margin: 0 0 1.4rem;
+}
+.frase blockquote {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.3;
+  margin: 0 0 .8rem;
+}
+.frase .significado { color: var(--ceniza); margin-bottom: 1.1rem; }
+.frase .estado {
+  display: inline-block;
+  margin-left: .9rem;
+  font-size: .95rem;
+  color: var(--ceniza);
+}
+.frase .estado.error { color: var(--rojo-vivo); }
+.btn-audio[aria-pressed="true"] { background: var(--sangre); }
+
+.nota {
+  border: 1px dashed var(--sangre);
+  padding: 1rem 1.2rem;
+  color: var(--ceniza);
+  font-size: .98rem;
+  margin-bottom: 2rem;
+  max-width: 68ch;
+}
+
+.pie-nav { margin-top: 3rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero::before { animation: none; }
+  * { transition: none !important; }
+}
+
+@media (max-width: 600px) {
+  .hero::before { right: 6%; opacity: .6; }
+  .item, .frase { padding: 1.2rem 1.1rem; }
+}
+
+/* Fotos */
+.foto {
+  margin: 0 0 2.5rem;
+  max-width: 640px;
+}
+.foto[hidden] { display: none; }
+.foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sangre);
+  background: var(--carbon);
+}
+.foto figcaption {
+  margin-top: .6rem;
+  color: var(--ceniza);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+/* Frases: autor de la cita y texto base */
+.frase .quien {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--rojo-vivo);
+  margin-bottom: .6rem;
+}
+.frase .original {
+  color: var(--ceniza);
+  font-size: .95rem;
+  border-left: 1px solid var(--linea);
+  padding-left: .8rem;
+  margin-bottom: .9rem;
+}
+
+/* Quiz */
+.progreso { color: var(--ceniza); margin-bottom: .4rem; }
+.pregunta { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 1rem; }
+.pregunta:focus { outline: none; }
+.opciones { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .7rem; max-width: 68ch; }
+.opcion {
+  width: 100%;
+  text-align: left;
+  background: var(--panel);
+  color: var(--hueso);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--sangre);
+  padding: .9rem 1.1rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.opcion:hover:not(:disabled) { background: var(--sangre); border-left-color: var(--rojo-vivo); }
+.opcion:disabled { cursor: default; color: var(--hueso); opacity: .75; }
+.opcion.correcta { background: #1d3a1f; border-color: #4caf50; border-left-color: #4caf50; opacity: 1; }
+.opcion.incorrecta { background: #3d0f12; border-color: var(--rojo-vivo); border-left-color: var(--rojo-vivo); opacity: 1; }
+.opcion.correcta::before { content: "Correcta: "; font-weight: 600; }
+.opcion.incorrecta::before { content: "Tu respuesta: "; font-weight: 600; }
+.respuesta p { margin-bottom: 1rem; }
