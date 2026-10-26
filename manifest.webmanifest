@@ -1,0 +1,19 @@
+{
+  "name": "Crimen y castigo",
+  "short_name": "Crimen y castigo",
+  "description": "Guía de estudio interactiva sobre la novela Crimen y castigo de Fiódor Dostoievski.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#120708",
+  "theme_color": "#120708",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
