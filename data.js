@@ -10,7 +10,7 @@ const VIDEO_AUTOR = "rDyUHQ3DAQU";
 const IMAGENES = {
   autor: {
     local: "dostoievski.jpg",
-    remoto: "https://commons.wikimedia.org/wiki/Special:FilePath/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg?width=640",
+    remoto: "https://commons.wikimedia.org/wiki/Special:FilePath/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%B8.png",
     alt: "Retrato de Fiódor Dostoievski pintado por Vasili Perov en 1872",
     credito: "Vasili Perov, Retrato de F. M. Dostoievski (1872). Óleo sobre lienzo, Galería Tretiakov. Dominio público, vía Wikimedia Commons."
   },
@@ -41,22 +41,22 @@ const PERSONAJES = [
   {
     nombre: "Rodión Raskólnikov",
     rol: "Protagonista",
-    texto: "Joven estudiante de derecho, pobre y orgulloso, que abandonó la universidad por falta de dinero. Sostiene una teoría según la cual existen hombres extraordinarios con derecho a transgredir la moral si su fin lo justifica. Para probarse a sí mismo, asesina a una usurera. Después, la culpa, la fiebre y el aislamiento lo van quebrando hasta llevarlo a confesar."
+    texto: "Joven estudiante de derecho, pobre y orgulloso, que abandonó la universidad por falta de dinero. Sostiene una teoría según la cual existen hombres extraordinarios con derecho a transgredir la ley para un fin superior. Esa idea lo empuja al asesinato y después lo arrastra a la culpa, la duda y la redención."
   },
   {
     nombre: "Sonia Marmeládova",
     rol: "Guía moral y redención",
-    texto: "Hija de Marmeládov. Se prostituye para sostener a su familia, pero conserva una fe profunda y una compasión enorme. Es la primera persona a quien Raskólnikov confiesa su crimen y quien lo acompaña hasta Siberia. Representa el sufrimiento aceptado como camino hacia la renovación."
+    texto: "Hija de Marmeládov. Se prostituye para sostener a su familia, pero conserva una fe profunda y una compasión enorme. Es la primera persona a quien Raskólnikov confiesa su crimen y quien lo conduce hacia la posibilidad de rehabilitarse."
   },
   {
     nombre: "Porfiri Petróvich",
     rol: "Juez de instrucción",
-    texto: "Investigador astuto y paciente. No busca atrapar a Raskólnikov con pruebas, sino con su propia psicología: conversa, insinúa y deja que la culpa haga el trabajo. Conoce la teoría de Raskólnikov porque leyó su artículo."
+    texto: "Investigador astuto y paciente. No busca atrapar a Raskólnikov con pruebas, sino con su propia psicología: conversa, insinúa y deja que la culpa haga el trabajo. Conoce la teoría del protagonista mejor que él mismo."
   },
   {
     nombre: "Arkadi Svidrigáilov",
     rol: "Doble oscuro del protagonista",
-    texto: "Antiguo patrón de Dunia, libertino y sin escrúpulos, sospechado de crímenes. Es lo que Raskólnikov podría llegar a ser si no encontrara redención: alguien para quien nada tiene límite y que termina vacío. Su final es el suicidio."
+    texto: "Antiguo patrón de Dunia, libertino y sin escrúpulos, sospechado de crímenes. Es lo que Raskólnikov podría llegar a ser si no encontrara redención: alguien para quien nada tiene valor más que el deseo y el capricho."
   },
   {
     nombre: "Dunia (Avdotia Románovna)",
@@ -71,47 +71,47 @@ const PERSONAJES = [
   {
     nombre: "Dmitri Razumijin",
     rol: "Amigo leal",
-    texto: "Compañero de universidad de Raskólnikov. Pobre pero trabajador, generoso y optimista. Lo cuida durante la enfermedad y representa la vida sencilla, solidaria y sana que el protagonista rechaza."
+    texto: "Compañero de universidad de Raskólnikov. Pobre pero trabajador, generoso y optimista. Lo cuida durante la enfermedad y representa la vida sencilla, solidaria y sana que el protagonista no logra alcanzar."
   },
   {
     nombre: "Semión Marmeládov",
     rol: "Funcionario alcohólico",
-    texto: "Padre de Sonia. Se hunde en la bebida y en la vergüenza, pero su confesión en la taberna es una de las escenas más conmovedoras de la obra. Muestra hasta dónde puede llevar la pobreza a una persona."
+    texto: "Padre de Sonia. Se hunde en la bebida y en la vergüenza, pero su confesión en la taberna es una de las escenas más conmovedoras de la obra. Muestra hasta dónde puede llevar la pobreza y la degradación humana."
   },
   {
     nombre: "Aliona Ivánovna y Lizaveta",
     rol: "Las víctimas",
-    texto: "Aliona es la usurera a la que Raskólnikov planea matar, considerada por él un \"piojo\" dañino. Lizaveta, su hermana, mansa y bondadosa, llega por sorpresa y también muere. Su muerte rompe la lógica de la teoría: ella era inocente."
+    texto: "Aliona es la usurera a la que Raskólnikov planea matar, considerada por él un \"piojo\" dañino. Lizaveta, su hermana, mansa y bondadosa, llega por sorpresa y también muere. Su muerte no es un accidente: es la prueba de que el crimen se sale de todo control."
   },
   {
     nombre: "Pyotr Petróvich Luzhin",
     rol: "Prometido de Dunia",
-    texto: "Hombre acomodado que predica el egoísmo racional y el interés propio. Quiere una esposa agradecida y sumisa. Intenta incriminar a Sonia, y su plan fracasa. Es una caricatura de las ideas utilitaristas."
+    texto: "Hombre acomodado que predica el egoísmo racional y el interés propio. Quiere una esposa agradecida y sumisa. Intenta incriminar a Sonia, y su plan fracasa. Es una caricatura de las ideas utilitarias que la novela critica."
   }
 ];
 
 const CONTEXTO = {
-  intro: "Crimen y castigo se publicó por entregas en 1866 y transcurre en San Petersburgo en esos mismos años. No es una novela que \"use\" la época como fondo: las ideas, la pobreza y las tensiones sociales de la Rusia de entonces son lo que hace posible el crimen.",
+  intro: "Crimen y castigo se publicó por entregas en 1866 y transcurre en San Petersburgo en esos mismos años. No es una novela que \"use\" la época como fondo: las ideas, la pobreza y las tensiones sociales forman parte decisiva del drama psicológico.",
   puntos: [
     {
       titulo: "Una Rusia en transición",
-      texto: "Tras la abolición de la servidumbre en 1861, el zar Alejandro II impulsó reformas que trastocaron el orden social. Muchos antiguos siervos y pequeños nobles quedaron sin sustento y migraron a la ciudad. Raskólnikov es un producto de ese desarraigo."
+      texto: "Tras la abolición de la servidumbre en 1861, el zar Alejandro II impulsó reformas que trastocaron el orden social. Muchos antiguos siervos y pequeños nobles quedaron sin sustento y tuvieron que adaptarse a la nueva realidad económica."
     },
     {
       titulo: "Pobreza urbana",
-      texto: "San Petersburgo aparece como una ciudad sucia, calurosa y superpoblada, con cuartos minúsculos, tabernas y prestamistas. La miseria empuja a Marmeládov a la bebida, a Sonia a la prostitución y a Raskólnikov a la desesperación. La pobreza no justifica el crimen, pero lo vuelve verosímil."
+      texto: "San Petersburgo aparece como una ciudad sucia, calurosa y superpoblada, con cuartos minúsculos, tabernas y prestamistas. La miseria empuja a Marmeládov a la bebida, a Sonia a la prostitución y a Raskólnikov a su teoría del crimen."
     },
     {
       titulo: "Nihilismo y utilitarismo",
-      texto: "En los años sesenta circulaban ideas materialistas, utilitaristas y nihilistas entre los jóvenes intelectuales: la moral tradicional era vista como prejuicio, y lo útil como criterio. Dostoievski las pone a prueba: si se aplican hasta el final, ¿qué queda de la persona?"
+      texto: "En los años sesenta circulaban ideas materialistas, utilitaristas y nihilistas entre los jóvenes intelectuales: la moral tradicional era vista como prejuicio, y lo útil como criterio de verdad. Raskólnikov vive atrapado en ese clima."
     },
     {
       titulo: "La figura del hombre extraordinario",
-      texto: "La admiración por figuras como Napoleón alimentaba la idea de que ciertos individuos están por encima de la ley común. Raskólnikov toma esa idea y la lleva a la práctica; la novela muestra su costo humano."
+      texto: "La admiración por figuras como Napoleón alimentaba la idea de que ciertos individuos están por encima de la ley común. Raskólnikov toma esa idea y la lleva a la práctica; la novela es el largo proceso de su derrumbe."
     },
     {
       titulo: "La fe ortodoxa",
-      texto: "Frente al racionalismo, Dostoievski propone una respuesta cristiana ortodoxa: el sufrimiento como purificación y la humildad como salida. Por eso la redención llega por medio de Sonia, del Evangelio (la lectura de la resurrección de Lázaro) y de la confesión."
+      texto: "Frente al racionalismo, Dostoievski propone una respuesta cristiana ortodoxa: el sufrimiento como purificación y la humildad como salida. Por eso la redención llega por medio de Sonia y la aceptación del dolor."
     }
   ]
 };
@@ -121,7 +121,7 @@ const NARRACION = {
   puntos: [
     {
       titulo: "Narrador omnisciente con foco en Raskólnikov",
-      texto: "Un narrador en tercera persona sabe lo que ocurre y lo que piensan los personajes, pero la mayor parte del tiempo sigue de cerca al protagonista. Vemos la ciudad y a los demás a través de su fiebre, su desconfianza y sus obsesiones."
+      texto: "Un narrador en tercera persona sabe lo que ocurre y lo que piensan los personajes, pero la mayor parte del tiempo sigue de cerca al protagonista. Vemos la ciudad y a los demás a través de su percepción."
     },
     {
       titulo: "Estilo indirecto libre",
@@ -129,15 +129,15 @@ const NARRACION = {
     },
     {
       titulo: "Novela policial al revés",
-      texto: "Sabemos desde el principio quién cometió el crimen. La tensión no está en descubrir al culpable, sino en ver cómo la conciencia, y no la policía, lo va cercando. El interés pasa del \"quién\" al \"por qué\" y al \"qué le hace esto a una persona\"."
+      texto: "Sabemos desde el principio quién cometió el crimen. La tensión no está en descubrir al culpable, sino en ver cómo la conciencia, y no la policía, lo va cercando. El interés psicológico es central."
     },
     {
       titulo: "Polifonía",
-      texto: "El crítico Mijaíl Bajtín llamó así a la convivencia de voces e ideas que compiten sin que el autor las resuelva de inmediato. Raskólnikov, Sonia, Porfiri, Svidrigáilov y Luzhin defienden visiones distintas del mundo, y cada una tiene fuerza propia."
+      texto: "El crítico Mijaíl Bajtín llamó así a la convivencia de voces e ideas que compiten sin que el autor las resuelva de inmediato. Raskólnikov, Sonia, Porfiri, Svidrigáilov y Luzhin aportan visiones distintas del mundo."
     },
     {
       titulo: "Tiempo y estructura",
-      texto: "La acción principal ocurre en pocos días, con un ritmo intenso y casi claustrofóbico. Se organiza en seis partes y un epílogo, donde la historia se abre hacia la redención. Los sueños y delirios, como el del caballo maltratado, funcionan como espejos de su conflicto interno."
+      texto: "La acción principal ocurre en pocos días, con un ritmo intenso y casi claustrofóbico. Se organiza en seis partes y un epílogo, donde la historia se abre hacia la redención. Los capítulos son cortos y tensos."
     }
   ]
 };
@@ -145,7 +145,7 @@ const NARRACION = {
 const CONFLICTOS = [
   {
     titulo: "Teoría contra conciencia",
-    texto: "Raskólnikov cree que puede ser un hombre \"extraordinario\" y actuar sin remordimiento. Pero su mente lo contradice: la enfermedad, las pesadillas y la paranoia aparecen apenas comete el crimen. La razón fría pierde frente a la conciencia moral."
+    texto: "Raskólnikov cree que puede ser un hombre \"extraordinario\" y actuar sin remordimiento. Pero su mente lo contradice: la enfermedad, las pesadillas y la paranoia aparecen apenas comete el crimen."
   },
   {
     titulo: "Culpa y castigo interior",
@@ -153,7 +153,7 @@ const CONFLICTOS = [
   },
   {
     titulo: "Orgullo contra humildad",
-    texto: "Su soberbia intelectual lo separa de los demás. Solo cuando acepta que es una persona común, capaz de equivocarse, puede iniciar su cambio. Sonia representa esa humildad que él se resiste a aceptar."
+    texto: "Su soberbia intelectual lo separa de los demás. Solo cuando acepta que es una persona común, capaz de equivocarse, puede iniciar su cambio. Sonia representa esa humildad que él se niega a aceptar."
   },
   {
     titulo: "Aislamiento contra comunidad",
@@ -165,7 +165,7 @@ const CONFLICTOS = [
   },
   {
     titulo: "Compasión contra frialdad",
-    texto: "Raskólnikov ayuda a Marmeládov y a su familia con gestos generosos, y al mismo tiempo ha matado a dos mujeres. Esta contradicción muestra que no es un monstruo, sino alguien dividido entre un corazón sensible y una idea destructiva."
+    texto: "Raskólnikov ayuda a Marmeládov y a su familia con gestos generosos, y al mismo tiempo ha matado a dos mujeres. Esta contradicción muestra que no es un monstruo, sino alguien dividido."
   },
   {
     titulo: "Pobreza y dignidad",
@@ -176,15 +176,15 @@ const CONFLICTOS = [
 const ESPACIOS = [
   {
     titulo: "El cuarto de Raskólnikov",
-    texto: "Una habitación diminuta bajo el techo, más parecida a un armario o a un ataúd que a un hogar. Es el lugar donde el protagonista se encierra con sus ideas. Su estrechez refleja el encierro mental."
+    texto: "Una habitación diminuta bajo el techo, más parecida a un armario o a un ataúd que a un hogar. Es el lugar donde el protagonista se encierra con sus ideas. Su estrechez refleja el encierro moral de su conciencia."
   },
   {
     titulo: "La casa de la usurera",
-    texto: "Escenario del crimen: un piso oscuro, con muebles viejos y olor a encierro. El acto ocurre en un espacio cerrado y silencioso, y después regresa en las pesadillas y en las visitas del protagonista."
+    texto: "Escenario del crimen: un piso oscuro, con muebles viejos y olor a encierro. El acto ocurre en un espacio cerrado y silencioso, y después regresa en las pesadillas y en las visitas de la culpa."
   },
   {
     titulo: "Las calles y la Plaza Sennaya",
-    texto: "Las calles calurosas, sucias y llenas de gente de San Petersburgo, con tabernas, mendigos y borrachos. Es el espacio de la miseria colectiva. Raskólnikov camina sin rumbo, y en la plaza, hacia el final, se arrodilla y besa la tierra por pedido de Sonia."
+    texto: "Las calles calurosas, sucias y llenas de gente de San Petersburgo, con tabernas, mendigos y borrachos. Es el espacio de la miseria colectiva. Raskólnikov camina sin rumbo, y en la plaza Sennaya la historia se vuelve casi visible."
   },
   {
     titulo: "La taberna",
@@ -220,56 +220,56 @@ const FRASES = [
     garnett: "Pain and suffering are always inevitable for a large intelligence and a deep heart.",
     quien: "Raskólnikov, Parte III, cap. 5",
     sentido: "Resume la idea central: la conciencia profunda implica sufrir, y ese sufrimiento tiene valor moral.",
-    audio: "frase-1.mp3"
+    audio: "frase-1.mp3.ogg"
   },
   {
     es: "No me incliné ante ti, me incliné ante todo el sufrimiento humano.",
     garnett: "I did not bow down to you, I bowed down to all the suffering of humanity.",
     quien: "Raskólnikov a Sonia, Parte IV, cap. 4",
     sentido: "El protagonista reconoce por primera vez el dolor ajeno: es el inicio de su cambio.",
-    audio: "frase-2.mp3"
+    audio: "frase-2.mp3.ogg"
   },
   {
     es: "¿Entiende usted lo que significa no tener absolutamente adónde ir?",
     garnett: "Do you understand, sir, do you understand what it means when you have absolutely nowhere to turn?",
     quien: "Marmeládov, Parte I, cap. 2",
     sentido: "Denuncia la soledad y el abandono que genera la miseria.",
-    audio: "frase-3.mp3"
+    audio: "frase-3.mp3.ogg"
   },
   {
     es: "¿No quedaría un pequeño crimen borrado por miles de buenas acciones?",
     garnett: "Would not one tiny crime be wiped out by thousands of good deeds?",
     quien: "Un estudiante en la taberna, Parte I, cap. 6",
     sentido: "El razonamiento utilitario que seduce a Raskólnikov y que la novela pone en cuestión.",
-    audio: "frase-4.mp3"
+    audio: "frase-4.mp3.ogg"
   },
   {
     es: "Me aplasté a mí mismo de una vez por todas, para siempre.",
     garnett: "I crushed myself once for all, forever.",
     quien: "Raskólnikov",
     sentido: "Entiende que el crimen destruyó su propia humanidad antes que a la víctima.",
-    audio: "frase-5.mp3"
+    audio: "frase-5.mp3.ogg"
   },
   {
     es: "El hombre lo tiene todo en las manos, y todo se le escapa entre los dedos por pura cobardía.",
     garnett: "Man has it all in his hands, and it all slips through his fingers from sheer cowardice.",
     quien: "Raskólnikov",
     sentido: "Una reflexión sobre el miedo como lo que impide actuar y decidir.",
-    audio: "frase-6.mp3"
+    audio: "frase-6.mp3.ogg"
   },
   {
     es: "Porque el sufrimiento, Rodión Románovich, es algo grande.",
     garnett: "For suffering, Rodion Romanovitch, is a great thing.",
     quien: "Porfiri Petróvich, Parte VI, cap. 2",
     sentido: "Porfiri le propone aceptar su sufrimiento como camino hacia la redención.",
-    audio: "frase-7.mp3"
+    audio: "frase-7.mp3.ogg"
   },
   {
     es: "Hay que romper lo que debe romperse de una vez por todas, y cargar con el sufrimiento.",
     garnett: "Break what must be broken, once for all, that's all, and take the suffering on oneself.",
     quien: "Raskólnikov",
     sentido: "Expresa la decisión de enfrentar las consecuencias en lugar de huir de ellas.",
-    audio: "frase-8.mp3"
+    audio: "frase-8.mp3.ogg"
   }
 ];
 
@@ -279,17 +279,17 @@ const QUIZ = [
     e: "Salió mes a mes en la revista El Mensajero Ruso durante 1866." },
   { p: "¿En qué ciudad transcurre la historia?", o: ["Moscú", "San Petersburgo", "Kiev", "Varsovia"], c: 1,
     e: "San Petersburgo, con sus barrios pobres como la zona de la plaza Sennaya." },
-  { p: "¿Cuál es la situación de Raskólnikov al comienzo de la novela?", o: ["Es un noble terrateniente", "Es un militar retirado", "Es un exestudiante de derecho en la pobreza", "Es un juez joven"], c: 2,
+  { p: "¿Cuál es la situación de Raskólnikov al comienzo de la novela?", o: ["Es un noble terrateniente", "Es un militar retirado", "Es un exestudiante de derecho en la pobreza", "Es un juez jubilado"], c: 2,
     e: "Dejó la universidad por falta de dinero y vive en un cuarto minúsculo." },
   { p: "¿A quién planea asesinar Raskólnikov?", o: ["A un funcionario corrupto", "A una usurera", "A su casero", "A un banquero"], c: 1,
     e: "A Aliona Ivánovna. Lizaveta, su hermana, también muere al llegar por sorpresa." },
-  { p: "¿Qué idea defiende Raskólnikov en su teoría?", o: ["Que todos los hombres son iguales ante la ley", "Que existen hombres extraordinarios con derecho a transgredir la moral", "Que el dinero corrompe a todos", "Que el crimen siempre se castiga"], c: 1,
+  { p: "¿Qué idea defiende Raskólnikov en su teoría?", o: ["Que todos los hombres son iguales ante la ley", "Que existen hombres extraordinarios con derecho a transgredir la moral", "Que el dinero salva a cualquier persona", "Que la religión debe ser reemplazada por la ciencia"], c: 1,
     e: "Divide a las personas en ordinarias y extraordinarias, y se pregunta a cuál pertenece." },
-  { p: "¿Quién es Sonia Marmeládova?", o: ["La hermana de Raskólnikov", "Una joven que se prostituye para mantener a su familia y lo guía hacia la redención", "La hija de la usurera", "La prometida de Razumijin"], c: 1,
+  { p: "¿Quién es Sonia Marmeládova?", o: ["La hermana de Raskólnikov", "Una joven que se prostituye para mantener a su familia y lo guía hacia la redención", "La hija de la usurera", "La prometida de Porfiri"], c: 1,
     e: "Es hija de Marmeládov, y su fe y compasión son clave en el final." },
   { p: "¿Cuál es el cargo de Porfiri Petróvich?", o: ["Sacerdote", "Médico", "Juez de instrucción", "Director de la cárcel"], c: 2,
     e: "Investiga el caso y lo resuelve más con psicología que con pruebas." },
-  { p: "¿Qué tipo de narrador tiene la novela?", o: ["Primera persona del protagonista", "Tercera persona, muy cercana a la mente de Raskólnikov", "Narrador-testigo que no conoce a los personajes", "Varias cartas entre personajes"], c: 1,
+  { p: "¿Qué tipo de narrador tiene la novela?", o: ["Primera persona del protagonista", "Tercera persona, muy cercana a la mente de Raskólnikov", "Narrador-testigo que no conoce a los personajes", "Narrador omnisciente sin entrar en la mente de nadie"], c: 1,
     e: "Es un narrador en tercera persona con foco casi constante en Raskólnikov." },
   { p: "¿Qué pasaje del Evangelio lee Sonia a Raskólnikov?", o: ["El sermón de la montaña", "La resurrección de Lázaro", "El diluvio", "La última cena"], c: 1,
     e: "La resurrección de Lázaro anticipa la renovación del protagonista." },
@@ -301,10 +301,10 @@ const AUTOR = {
   nombre: "Fiódor Mijáilovich Dostoievski",
   fechas: "Moscú, 1821 – San Petersburgo, 1881",
   parrafos: [
-    "Nació en Moscú en una familia de clase media. Su padre era médico en un hospital para pobres, un ambiente que le dio desde niño contacto con el dolor y la miseria. Estudió ingeniería militar en San Petersburgo, pero su verdadera vocación era la literatura.",
-    "Debutó en 1846 con Pobres gentes, que fue muy elogiada. Poco después se unió al círculo de Petrashevski, un grupo que discutía ideas socialistas. En 1849 fue arrestado y condenado a muerte; en el último momento, ya frente al pelotón, la pena fue conmutada. Pasó cuatro años en trabajos forzados en Siberia y luego sirvió como soldado.",
-    "Esa experiencia lo cambió: conoció a criminales de todo tipo, se acercó a la fe y desconfió de las teorías abstractas sobre el ser humano. Sufría epilepsia, y arrastró durante años deudas y problemas económicos por el juego.",
-    "Escribió Crimen y castigo en 1866, en medio de la presión de las deudas y de los plazos de la revista que lo publicaba por entregas. Lo impulsaron tres cosas: su experiencia en presidio, su rechazo a las ideas nihilistas y utilitaristas de su tiempo, y la convicción de que ninguna teoría puede justificar quitar una vida. Después escribió El idiota, Los demonios y Los hermanos Karamázov."
+    "Nació en Moscú en una familia de clase media. Su padre era médico en un hospital para pobres, un ambiente que le dio desde niño contacto con el dolor y la miseria. Estudió ingeniería, pero su interés por la literatura lo llevó a dedicarse a la escritura.",
+    "Debutó en 1846 con Pobres gentes, que fue muy elogiada. Poco después se unió al círculo de Petrashevski, un grupo de discusión intelectual. En 1849 fue arrestado y condenado a muerte, aunque la sentencia se conmutó por un exilio y trabajos forzados en Siberia.",
+    "Esa experiencia lo cambió: conoció a criminales de todo tipo, se acercó a la fe y desconfió de las teorías abstractas sobre el ser humano. Sufría epilepsia, y arrastró durante años dificultades económicas y emocionales.",
+    "Escribió Crimen y castigo en 1866, en medio de la presión de las deudas y de los plazos de la revista que lo publicaba por entregas. Lo impulsaron tres cosas: su experiencia en presidio, su conflicto con ideas materialistas y su fe ortodoxa."
   ],
   motivos: [
     "Haber visto de cerca la cárcel, la pobreza y la culpa.",
