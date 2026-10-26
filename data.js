@@ -15,14 +15,14 @@ const IMAGENES = {
     credito: "Vasili Perov, Retrato de F. M. Dostoievski (1872). Óleo sobre lienzo, Galería Tretiakov. Dominio público, vía Wikimedia Commons."
   },
   contexto: {
-    local: "plaza-sennaya.jpg",
+    local: "plaza.jpg",
     alt: "Fotografía antigua de la plaza Sennaya, en San Petersburgo",
-    credito: "Plaza Sennaya, San Petersburgo. Escribe aquí el autor, el año y la fuente de la foto que subas."
+    credito: "Plaza Sennaya, San Petersburgo. Benjamin Patersson."
   },
   espacios: {
-    local: "san-petersburgo.jpg",
+    local: "san.jpg",
     alt: "Vista de San Petersburgo en el siglo XIX",
-    credito: "San Petersburgo en el siglo XIX. Escribe aquí el autor, el año y la fuente de la foto que subas."
+    credito: "San Petersburgo en el siglo XIX. Peter & Paul fortress in Saint Petersburg."
   }
 };
 
