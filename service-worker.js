@@ -1,3 +1,5 @@
+const CACHE_NAME = "crimen-y-castigo-v2";
+
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -7,8 +9,8 @@ const APP_SHELL = [
   "./manifest.webmanifest",
   "./icon.svg",
   "./dostoievski.jpg",
-  "./plaza-sennaya.jpg",
-  "./san-petersburgo.jpg",
+  "./plaza.jpg",
+  "./san.jpg",
   "./frase-1.mp3.ogg",
   "./frase-2.mp3.ogg",
   "./frase-3.mp3.ogg",
@@ -21,7 +23,7 @@ const APP_SHELL = [
 
 self.addEventListener("install", function (event) {
   event.waitUntil(
-    caches.open("crimen-y-castigo-v1").then(function (cache) {
+    caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(APP_SHELL);
     })
   );
@@ -29,7 +31,21 @@ self.addEventListener("install", function (event) {
 });
 
 self.addEventListener("activate", function (event) {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(
+        keys
+          .filter(function (key) {
+            return key !== CACHE_NAME;
+          })
+          .map(function (key) {
+            return caches.delete(key);
+          })
+      );
+    }).then(function () {
+      return self.clients.claim();
+    })
+  );
 });
 
 self.addEventListener("fetch", function (event) {
@@ -41,11 +57,13 @@ self.addEventListener("fetch", function (event) {
 
       return fetch(event.request).then(function (response) {
         const responseClone = response.clone();
+
         if (response.ok && event.request.url.startsWith(self.location.origin)) {
-          caches.open("crimen-y-castigo-v1").then(function (cache) {
+          caches.open(CACHE_NAME).then(function (cache) {
             cache.put(event.request, responseClone);
           });
         }
+
         return response;
       }).catch(function () {
         return caches.match("./index.html");
